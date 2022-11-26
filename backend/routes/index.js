@@ -7,7 +7,6 @@ const path = require('path');
 let likesData = [];
 let drinksData = [];
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/drinksDB");
 
 const drinkSchema = new mongoose.Schema({
   _id: Number,
@@ -18,10 +17,9 @@ const drinkSchema = new mongoose.Schema({
 
 const Drink = mongoose.model("Drink", drinkSchema);
 
+mongoose.connect("mongodb+srv://admin-derrick:test-123@cluster0.ucfbjgj.mongodb.net/?retryWrites=true&w=majority");
 
 //db
-
-
 
 const p = path.join(
   __dirname,
@@ -41,7 +39,7 @@ router.post('/drink', (req, res, next) => {
   // console.log(updatedData)
   // console.log(req.body)
   const drinklist = req.body;
-  console.log(drinklist)
+  //console.log(drinklist)
   //const freshdrinklistJSON = JSON.stringify(drinklist); //JSON.stringify
   //console.log(freshdrinklistJSON);
   //fs.writeFileSync(p,freshdrinklistJSON);//wrote on file system as JSON file
@@ -51,7 +49,8 @@ router.post('/drink', (req, res, next) => {
       if(err){
         console.log(err);
       } else {
-        console.log("Successfully Updated!");
+       //console.log("Successfully Updated!");
+       //mongoose.connection.close();
       }
     });
   }
@@ -67,7 +66,7 @@ router.get('/drink', (req, res, next) => {
       console.log(err);
     } else {
   
-      //mongoose.connection.close();
+      
       //console.log(drinks)
       drinksData = drinks;
       //console.log(drinksData);
@@ -76,6 +75,7 @@ router.get('/drink', (req, res, next) => {
         likesData[i] = drinks[i].likes;
       }
       //console.log(likesData);
+      //mongoose.connection.close();
    
     }
   });
@@ -83,6 +83,7 @@ router.get('/drink', (req, res, next) => {
 })
 
 router.get('/getdrinks', (req, res, next)=>{
+  //mongoose.connect("mongodb://localhost:27017/drinksDB");
   Drink.find(function(err, drinks){
     if(err){
       console.log(err);
