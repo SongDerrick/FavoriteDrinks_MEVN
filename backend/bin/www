@@ -1,43 +1,25 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
-var app = require('../app');
+var app = require('../app'); // Requiring app.js file
 var debug = require('debug')('backend:server');
-var http = require('http');
-
-/**
- * Get port from environment and store in Express.
- */
+var http = require('http'); // Requriring http module
 
 var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+// Getting port number from the given environent and store it. If port number is not given by the environment
+// It is set to 3000
 
-/**
- * Create HTTP server.
- */
+app.set('port', port); // Setting port
 
-var server = http.createServer(app);
+var server = http.createServer(app); // Http server created
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
+server.listen(port); // Server listening on given port 
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
+//Function that normalize Port number in the current environment
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
-    // named pipe
     return val;
   }
 
@@ -45,14 +27,10 @@ function normalizePort(val) {
     // port number
     return port;
   }
-
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
+// Event lister for the server handling error event
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -62,7 +40,6 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
@@ -77,10 +54,7 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
-
+// Event listener for the server, handling listening event
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
