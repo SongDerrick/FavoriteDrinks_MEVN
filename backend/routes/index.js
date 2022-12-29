@@ -6,6 +6,7 @@ const path = require('path');
 
 let likesData = []; // array to hold likes data given by user
 let drinksData = []; // array to hold drink data
+
 const mongoose = require('mongoose');
 
 const drinkSchema = new mongoose.Schema({
@@ -26,7 +27,7 @@ const p = path.join(
   '../',
   'data',
   'data.json' 
-); // path configuration
+); // path configuration // no more used
 
 // GET METHOD '/' -> Getting home page!!
 router.get('/', function(req, res, next) {

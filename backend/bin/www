@@ -3,6 +3,7 @@ var debug = require('debug')('backend:server');
 var http = require('http'); // Requriring http module
 
 var port = normalizePort(process.env.PORT || '3000');
+
 // Getting port number from the given environent and store it. If port number is not given by the environment
 // It is set to 3000
 
