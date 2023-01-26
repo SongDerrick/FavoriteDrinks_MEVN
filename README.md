@@ -1,10 +1,22 @@
-# FavoriteDrinks
+# FavoriteDrinks - MongoDB, Express.js, Node.js, Vue.js(MEVN Stack)
 
-### Read me
+## HTTP Webserver - Favorite Drink Selector
+2022 Fall Semester Computer Network Project
 
-Files that contains main functionality =>
+Comments are written in the codes. Please read along the comments to comprehend codes.
 
-1. /drinkrank -> App.vue
-2. /backend -> app.js, /routes/index.js, /bin/www
+**Currently Deployed!** => www.bigdreams.co.kr
+Enjoy!
 
-please read comments to comprehend codes.
+### Description
+This project mainly aims on fully functional web server based on node.js runtime.
+This service provides the rankings of various drinks determined by user-active likes. 
+
+
+
+### Environment
+
+### Files
+
+### Usage
+
