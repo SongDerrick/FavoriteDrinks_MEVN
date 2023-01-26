@@ -11,13 +11,25 @@ Enjoy!
 
 ## Description
 This project mainly aims on fully functional web server based on node.js runtime.  
-This service provides the rankings of various drinks determined by user-active likes. 
+This service provides the rankings of various drinks determined by user-active likes.   
+
+### Structure Overview
+<img src="img/img1.png" width="400" height="300"/>   
+
+
 
 ## Getting Started
 
-### Environment
+```
+npm install
 
-### Files
+node /bin/www
+```
+
+### Files   
+
+<img src="img/img2.png" width="400" height="300"/>
 
 ### Usage
 
+Feel free to use this project as MEVN template to deploy very simple web server projects.
